@@ -2,46 +2,65 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Hecate!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 
 <body>
     <div class="container">
-        <h1>Hecate</h1>
-        <form action="/short" method="post" class="my-4 form-inline">
+        <h1 class="display-3">Hecate <svg class="bi bi-arrows-angle-contract" width="1em" height="1em"
+                viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M9.5 2.036a.5.5 0 01.5.5v3.5h3.5a.5.5 0 010 1h-4a.5.5 0 01-.5-.5v-4a.5.5 0 01.5-.5z"
+                    clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                    d="M14.354 1.646a.5.5 0 010 .708l-4.5 4.5a.5.5 0 11-.708-.708l4.5-4.5a.5.5 0 01.708 0zm-7.5 7.5a.5.5 0 010 .708l-4.5 4.5a.5.5 0 01-.708-.708l4.5-4.5a.5.5 0 01.708 0z"
+                    clip-rule="evenodd" />
+                <path fill-rule="evenodd"
+                    d="M2.036 9.5a.5.5 0 01.5-.5h4a.5.5 0 01.5.5v4a.5.5 0 01-1 0V10h-3.5a.5.5 0 01-.5-.5z"
+                    clip-rule="evenodd" />
+            </svg></h1>
+        <form action="/short" method="post" class="my-5 form-inline">
             <label for="fullUrl" class="sr-only">Url</label>
             <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2" />
-            <button class="btn btn-success" type="submit">Shrink</button>
+            <button class="btn btn-warning" type="submit">Shrink</button>
         </form>
+        <div class="table-responsive">
+            <table class="table table-hover table-light table-bordered" id="mostVisited">
+                <caption>Most Visited Shrinks</caption>
+                <thead class="thead-dark">
+                    <tr>
+                        <th>
+                            Full URL
+                        </th>
+                        <th>
+                            Magik URL
+                        </th>
+                        <th>
+                            Visits
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% shortUrls.forEach(shortUrl => { %>
+                    <tr>
+                        <td>
+                            <a href="<%= shortUrl.full %>"><%= shortUrl.full %></a>
+                        </td>
+                        <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
+                        <td><%= shortUrl.clicks %></td>
+                    </tr>
+                    <% }) %>
 
-        <table class="table table-striped table-responsive">
-            <thead>
-                <tr>
-                    <th>
-                        Full URL
-                    </th>
-                    <th>
-                        Short URL
-                    </th>
-                    <th>
-                        Clicks
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <a href="https://corona19.tech">https://corona19.tech</a>
-                    </td>
-                    <td><a href="corona19">corona19</a></td>
-                    <td>10</td>
-                </tr>
-            </tbody>
-        </table>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
+<script src="/js/main.js"></script>
 
 </html>
