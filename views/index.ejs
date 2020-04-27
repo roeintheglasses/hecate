@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Hecate</h1>
+        <form action="/short" method="post" class="my-4 form-inline">
+            <label for="fullUrl" class="sr-only">Url</label>
+            <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2" />
+            <button class="btn btn-success" type="submit">Shrink</button>
+        </form>
+
+        <table class="table table-striped table-responsive">
+            <thead>
+                <tr>
+                    <th>
+                        Full URL
+                    </th>
+                    <th>
+                        Short URL
+                    </th>
+                    <th>
+                        Clicks
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="https://corona19.tech">https://corona19.tech</a>
+                    </td>
+                    <td><a href="corona19">corona19</a></td>
+                    <td>10</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+
+</html>
