@@ -12,8 +12,9 @@
 
 <body>
     <div class="container">
-        <h1 class="display-3">Hecate <svg class="bi bi-arrows-angle-contract" width="1em" height="1em"
-                viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <h1 class="display-3">Hecate
+            <svg class="bi bi-arrows-angle-contract" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd"
                     d="M9.5 2.036a.5.5 0 01.5.5v3.5h3.5a.5.5 0 010 1h-4a.5.5 0 01-.5-.5v-4a.5.5 0 01.5-.5z"
                     clip-rule="evenodd" />
@@ -23,13 +24,18 @@
                 <path fill-rule="evenodd"
                     d="M2.036 9.5a.5.5 0 01.5-.5h4a.5.5 0 01.5.5v4a.5.5 0 01-1 0V10h-3.5a.5.5 0 01-.5-.5z"
                     clip-rule="evenodd" />
-            </svg></h1>
+            </svg>
+            <blockquote class="blockquote">
+                <footer><cite title="Source Title">Shrink URLs, Magikally!</cite>
+                </footer>
+            </blockquote>
+        </h1>
         <form action="/short" method="post" class="my-5 form-inline">
             <label for="fullUrl" class="sr-only">Url</label>
-            <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2" />
+            <input required placeholder="URL" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2" />
             <button class="btn btn-warning" type="submit">Shrink</button>
         </form>
-        <div class="table-responsive">
+        <div class="table-responsive text-center">
             <table class="table table-hover table-light table-bordered" id="mostVisited">
                 <caption>Most Visited Shrinks</caption>
                 <thead class="thead-dark">
@@ -61,6 +67,10 @@
         </div>
     </div>
 </body>
+<div class="footer">
+    <p>Created with ❤️ by <a href="https://www.github.com/roeintheglasses">Hrishi Jangir</a></p>
+</div>
+
 <script src="/js/main.js"></script>
 
 </html>
