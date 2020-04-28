@@ -7,6 +7,13 @@
         "start": "node src/app.js",
         "dev": "env-cmd -f ./config/dev.env  nodemon src/app.js"
     },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/roeintheglasses/hecate.git"
+    },
+    "keywords": [
+        "hecate"
+    ],
     "author": "",
     "license": "ISC",
     "dependencies": {
