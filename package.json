@@ -18,7 +18,7 @@
     "license": "ISC",
     "dependencies": {
         "ejs": "^3.1.2",
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "mongoose": "^5.9.10",
         "shortid": "^2.2.15"
     },
